@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="assets/reset.css">
 <link rel="stylesheet" href="style.css">
 <html lang="en-us">
     <head>
@@ -8,7 +8,7 @@
     <body>
         <h1>The Psychic Game</h1>
         <div>
-            <p id="directions-text">Guess what letter I am thinking of</p>
+            <p>Guess what letter I am thinking of</p>
             <div>wins: <span id=“wins-text”></span></div>
             <div>losses: <span id=“losses-text”></span></div>
             <div>guess left: <span id=“guessesleft-text”></span></div>
@@ -16,10 +16,12 @@
         </div>
         <script type="text/javascript">
             // the array for computer choices
-            var computerChoices = ("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q"
-                ,"r","s","t","u","v","w","x","y","z");
+            var computerChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q"
+                ,"r","s","t","u","v","w","x","y","z"];
+            var userGuess = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q"
+                ,"r","s","t","u","v","w","x","y","z"];
             // the code for randomly choosing a letter
-            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            var computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)];
             var wins = 0;
             var losses = 0;
             var directionsText = document.getElementById("directions-text");
@@ -27,27 +29,33 @@
             var lossesText = document.getElementById("losses-text");
             var guessesLeft = document.getElementById("guessleft-text");
             var guessesSoFar = document.getElementById("guessessofar-text");
-            var userGuess = event.key;
+            var userGuess = event;
+            var guessesRemaining =
 
             // player hits a key
             document.onkeyup = function(event) {
 
-                // checks if the letter guesses is not the letter the computer chose
-                if ((userGuess !== computerchoice)) {
+                // checks if the letter guessed is not the letter the computer chose
+                if ((userGuess !== computerChoice)) {
                     losses++;
-                } else {
-                    // checks if letter guessed is the letter the computer chose
-                if (userGuess === computerGuess) {
-                    wins++;
-                        }
-                    }
                 }
+                else {
+                    wins++;
+                }
+                if (userGuess !== computerChoice) {
+                    guessesleft--;
+                }
+
+                if (userGuess !==Animation){
+                    guessesSoFar++;
+                }
+            }
             directionsText.textContent = "";
             // updates the scores and keeps track of the guesses and how many guesses are left and displays them
-            winsText.textContent = "wins: " + wins;
-            lossesText.textContent = "losses: " + losses;
-            userChoiceText.textContent = "guesses left: " + userGuess;
-            computerChoiceText.textContent = "guesses so far: " + computerGuess;
+            winsText.textContent =  wins;
+            lossesText.textContent =  losses;
+            userChoiceText.textContent = guessLeft ;
+            computerChoiceText.textContent = guessesSoFar ;
         </script>
     </body>
 </html>
