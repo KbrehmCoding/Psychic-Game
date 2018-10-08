@@ -28,9 +28,9 @@
             var winsText = document.getElementById("wins-text");
             var lossesText = document.getElementById("losses-text");
             var guessesLeft = document.getElementById("guessleft-text");
+            var chances = 9;
             var guessesSoFar = document.getElementById("guessessofar-text");
-            var userGuess = event;
-            var guessesRemaining =
+            var userGuess = event.key;
 
             // player hits a key
             document.onkeyup = function(event) {
@@ -43,12 +43,15 @@
                     wins++;
                 }
                 if (userGuess !== computerChoice) {
-                    guessesleft--;
+                    guessesLeft--;
                 }
 
                 if (userGuess !==Animation){
                     guessesSoFar++;
                 }
+
+                if (guessesSoFar > 9)
+                    guessesLeft - 9;
             }
             directionsText.textContent = "";
             // updates the scores and keeps track of the guesses and how many guesses are left and displays them
