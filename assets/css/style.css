@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(255, 115, 183);
+}
+
+div {
+    float:left;
+    color: white;
+    padding-top: 20px;
+    width: 300px;
+    background-color: rgb(98, 79, 186);
+}
+
+p {
+    color: white;
+    float:left;
+    width: 300px;
+    background-color: rgb(98, 79, 186);
+}
+
+img {
+    float: right;
+}
+
+h1 {
+    background-color: white;
+    font-size: 50px;
+    text-align: center;
+}
