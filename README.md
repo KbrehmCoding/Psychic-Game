@@ -1,4 +1,5 @@
 # Psychic-Game
+Homework Directions:
 
 You're going to make a game just like the one in the video. Essentially, the app randomly picks a letter, and the user has to guess which letter the app chose. Put the following text on your page:
 
@@ -15,3 +16,9 @@ Your Guesses So Far: (the specific letters that the user typed. Display these un
 When the player wins, increase the Wins counter and start the game over again (without refreshing the page).
 
 When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins).
+
+
+My thoughts:
+
+need to learn the code to reset the guessesLeft and guessesSoFar
+need to figure out why the event.key isnt working

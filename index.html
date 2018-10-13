@@ -1,64 +1,19 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="assets/reset.css">
-<link rel="stylesheet" href="style.css">
 <html lang="en-us">
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
         <h1>The Psychic Game</h1>
         <div>
             <p>Guess what letter I am thinking of</p>
-            <div>wins: <span id=“wins-text”></span></div>
-            <div>losses: <span id=“losses-text”></span></div>
-            <div>guess left: <span id=“guessesleft-text”></span></div>
-            <div>guesses so far: <span id=“guessessofar-text”></span></div>
+            <div>wins: <span id="wins-text">0</span></div>
+            <div>losses: <span id="losses-text">0</span></div>
+            <div>guesses left: <span id="guessesleft-text">9</span></div>
+            <div>guesses so far: <span id="guessessofar-text">0</span></div>
         </div>
-        <script type="text/javascript">
-            // the array for computer choices
-            var computerChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q"
-                ,"r","s","t","u","v","w","x","y","z"];
-            var userGuess = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q"
-                ,"r","s","t","u","v","w","x","y","z"];
-            // the code for randomly choosing a letter
-            var computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-            var wins = 0;
-            var losses = 0;
-            var directionsText = document.getElementById("directions-text");
-            var winsText = document.getElementById("wins-text");
-            var lossesText = document.getElementById("losses-text");
-            var guessesLeft = document.getElementById("guessleft-text");
-            var chances = 9;
-            var guessesSoFar = document.getElementById("guessessofar-text");
-            var userGuess = event.key;
-
-            // player hits a key
-            document.onkeyup = function(event) {
-
-                // checks if the letter guessed is not the letter the computer chose
-                if ((userGuess !== computerChoice)) {
-                    losses++;
-                }
-                else {
-                    wins++;
-                }
-                if (userGuess !== computerChoice) {
-                    guessesLeft--;
-                }
-
-                if (userGuess !==Animation){
-                    guessesSoFar++;
-                }
-
-                if (guessesSoFar > 9)
-                    guessesLeft - 9;
-            }
-            directionsText.textContent = "";
-            // updates the scores and keeps track of the guesses and how many guesses are left and displays them
-            winsText.textContent =  wins;
-            lossesText.textContent =  losses;
-            userChoiceText.textContent = guessLeft ;
-            computerChoiceText.textContent = guessesSoFar ;
-        </script>
+        <script src="assets/javascript/game.js"></script>
     </body>
 </html>
