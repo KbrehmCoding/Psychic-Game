@@ -1,5 +1,5 @@
 # Psychic-Game
-
+link :https://kbrehmcoding.github.io/unit-4-game/
 First I got all the scores to appear on the screen, then I made the array and got the onkeyup to work so that the user can make a guess, then I codded all the if then statements so that the scores would update.
 
 Once I got all the code to work I did the css 
